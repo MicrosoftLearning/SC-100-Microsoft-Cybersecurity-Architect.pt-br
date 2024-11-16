@@ -4,7 +4,7 @@ casestudy:
   module: 'Module 0: Case study introduction'
 ---
 
-## Introdução ao estudo de caso
+## Introdução aos estudos de caso
 
 Muitos dos estudos de caso neste curso serão baseados nos desafios de design de segurança cibernética que estão sendo enfrentados pela empresa fictícia Tailwind Traders.
 

@@ -1,12 +1,12 @@
 ---
 casestudy:
-  title: 'Estudo de caso: avaliar a conformidade regulatória'
+  title: 'Estudo de caso: Avaliar a conformidade regulatória'
   module: 'Module 05: Design solutions for regulatory compliance'
 ---
 
 Este exercício de estudo de caso foi projetado para fornecer experiência para executar algumas tarefas de design conceitual relacionadas aos assuntos aprendidos neste módulo.
 
-## Estudo de caso: avaliar a conformidade regulatória
+## Estudo de caso: Avaliar a conformidade regulatória
 
 A Contoso Pharma é uma indústria farmacêutica internacional com presença na América do Norte e na Europa. A Contoso Pharma tem cargas de trabalho locais e no Azure. O objetivo é que, nos próximos dois anos, todas as cargas de trabalho estejam totalmente no Azure e haja cargas de trabalho mínimas no local. Abaixo está uma lista de suas principais cargas de trabalho:
 
