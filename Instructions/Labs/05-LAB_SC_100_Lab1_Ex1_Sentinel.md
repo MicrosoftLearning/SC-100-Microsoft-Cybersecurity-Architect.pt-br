@@ -30,19 +30,22 @@ Nesse cenário, você implantará a solução SOAR do SIEM com base no Microsoft
 
 ## Parte 2: Implementar a solução (opcional)
 
+> [!NOTE]
+> Para esta parte do laboratório, a tarefa de criar um painel com exibições personalizadas para incidentes e seus respectivos alertas (tarefa 4 deste exercício) não é funcional, pois não há dados a serem usados para executar essa tarefa. As etapas da tarefa 4 são incluídas apenas para fins informativos. A execução das etapas não retornará nenhum dado.
+
 ### Tarefa 1 — Criar um workspace do Log Analytics
 
 Nesta tarefa, você criará um workspace do Log Analytics, que é necessário para hospedar todos os dados que o Microsoft Sentinel ingerirá e usará para as detecções, análises e outros recursos.
 
 1. Faça logon na VM do Cliente 1 (LON-SC1) como a conta **lon-sc1\admin**. A senha deve ser fornecida pelo seu provedor de hospedagem de laboratório.
-2. Abra o **Microsoft Edge**, selecione a barra de endereços, navegue até **`https://portal.azure.com`** e faça login no portal do Azure como usuário **User1-*******@LODSUATMCA.onmicrosoft.com** (em que ****** é sua ID de locatário exclusiva fornecida pelo provedor de hospedagem de laboratório). A senha do usuário deve ser fornecida pelo provedor de hospedagem do laboratório.
+2. Abra o **Microsoft Edge**, selecione a barra de endereços, navegue até **`https://portal.azure.com`** e faça logon no Portal do Azure como usuário **User1-*******@LODSUATMCA.onmicrosoft.com** (em que ****** é sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem de laboratório). A senha do usuário deve ser fornecida pelo provedor de hospedagem do laboratório.
 3. Na caixa de diálogo "Permanecer conectado?", selecione a caixa de seleção "Não mostrar novamente" e, em seguida, selecione **Não**.
 4. Feche a caixa de diálogo de salvamento de senha na parte inferior selecionando "Nunca" para não salvar as credenciais de administradores globais padrão em seu navegador.
 5. Cancele a tela de Boas-vindas ao Microsoft Azure.
 6. Selecione **Criar recurso** e procure por **workspace do Log Analytics**
 7. Encontre o **bloco Workspace do Log Analytics** e selecione **Criar**.
-8. No site do workspace do Log Analytics, crie um novo **Grupo de recursos** e nomeie-o **`rg_eastus_soc`**.
-9. Em Detalhes da instância, insira o nome **`law-sentinel`** e selecione **Leste dos EUA** em região.
+8. No espaço "Criar workspace do Log Analytics", crie um novo **Grupo de recurso** e atribua o nome **`rg_eastus_soc`**.
+9. Em Detalhes da instância, insira o nome **`law-sentinel`**, selecione **Leste dos EUA** para a região.
 10. Selecione **Revisar e criar**
 11. Selecione **Criar** para iniciar a implantação.
 
@@ -57,14 +60,9 @@ Nesta tarefa, você adicionará o Sentinel ao workspace do Log Analytics criado 
 1. Na página do **Microsoft Sentinel**, selecione **Criar**.
 1. Na página **Adicionar um Microsoft Sentinel a um workspace**, o workspace do Log Analytics criado anteriormente estará listado.  Selecione **law-sentinel** e **Adicionar**.
 1. Pode levar alguns minutos para adicionar o Sentinel ao workspace.  Depois de adicionado, a página **Microsoft Sentinel | Notícias e Guia**s será exibida.  Você receberá uma notificação de que a avaliação gratuita do Microsoft Sentinel está ativada.  Selecione **OK**.
-1. No centro da página, selecione **Ir para o hub de conteúdo**.  Como opção, no painel de navegação esquerdo, expanda **Gerenciamento de Conteúdo** e selecione **Hub de conteúdo**.
-1. No Hub de Conteúdo, você instalará o **Laboratório de Treinamento do Microsoft Sentinel**.  Para encontrar essa solução, filtre **Provedor = Microsoft** e **Categoria = Treinamento e Tutoriais**. Depois que esses filtros forem definidos e aplicados, o **Laboratório de Treinamento do Microsoft Sentinel** será listado. Selecione-o nos resultados da pesquisa e **instale** a solução.
-1. Selecione **Criar**.
-1. Escolha o grupo de recursos **rg_eastus_soc** e o workspace **law-sentinel**.
-1. Selecione **Revisar e Criar** e **Criar**.
-1. Aguarde a instalação da solução.
+1. No centro da página, selecione **Ir para o hub de conteúdo**.  O hub de conteúdo é onde você baixa soluções. Fique à vontade para explorar hub de conteúdo.
 
-Você implantou o Sentinel no workspace do Log Analytics e adicionou dados. 
+Você implantou o Sentinel no workspace do Log Analytics. 
 
 ### Tarefa 3 – Configurar o RBAC
 
@@ -137,6 +135,9 @@ Além disso, a equipe de rede precisa acessar os registros da Cisco Umbrella. Vo
 Você criou o modelo de acesso baseado em função para os requisitos de função da equipe de operações de segurança da Contoso e criou uma função personalizada para a equipe de rede, além de ter atribuído a função na tabela específica em seu workspace do Log Analytics.
 
 ### Tarefa 4 — Criar uma pasta de trabalho
+
+> [!NOTE]
+> Essas etapas são incluídas apenas para fins informativos. A execução das etapas não retornará nenhum dado.
 
 Nesta tarefa, você criará uma pasta de trabalho para obter um painel com exibições personalizadas e incidentes atuais e seus alertas.
 
