@@ -34,12 +34,9 @@ Nesta tarefa, você criará um local nomeado usando o endereço IP externo da VM
 
 1. Faça logon na VM do Cliente 1 (LON-Sc1) como a conta **lon-sc1\admin** . A senha deve ser fornecida pelo seu provedor de hospedagem de laboratório.
 1. Abra uma janela do **PowerShell** selecionando o menu Iniciar com o botão direito do mouse e, em seguida, selecione **Terminal**.
-1. Insira o seguinte cmdlet para verificar seu endereço IP externo atual:
-    ```powershell
-    curl ifconfig.me | Select-String -Pattern '.'
-    ```
+1. Insira o seguinte cmdlet para verificar seu endereço IP externo atual: `Invoke-RestMethod -Uri "http://ifconfig.me/ip"`
 1. Anote o endereço IP retornado.
-1. Abra o **Microsoft Edge**, selecione a barra de endereços, navegue até **`https://entra.microsoft.com`** e faça logon no Portal do Entra ID como **Administrador MOD**admin@WWLxZZZZZZ.onmicrosoft.com(onde ZZZZZZ é sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem do laboratório). A senha de administrador deve ser fornecida pelo seu provedor de hospedagem do laboratório.
+1. Abra o **Microsoft Edge**, selecione a barra de endereços, navegue para **`https://entra.microsoft.com`** e faça logon no Portal do Entra ID como **Administrador do MOD**admin@WWLxZZZZZZ.onmicrosoft.com (em que ZZZZZZ é sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem do laboratório). A senha de administrador deve ser fornecida pelo seu provedor de hospedagem do laboratório.
 1. Se você for solicitado a configurar a autenticação multifator, siga as instruções.
 1. Na caixa de diálogo Permanecer conectado?, selecione a caixa de seleção **Não mostrar novamente** e, em seguida, selecione **Não**.
 1. Feche a caixa de diálogo de salvamento de senha selecionando **Agora não**, para não salvar as credenciais do administrador global padrão em seu navegador.
@@ -85,7 +82,7 @@ Como você criou uma política de Acesso Condicional limitando o acesso a todos 
 Em um cenário do mundo real, você faria um período de teste mais longo com um grupo maior e mais representativo, para garantir que nenhum incidente imprevisível distorça o resultado.
 
 1. Abra uma nova janela **InPrivate** no seu navegador **Microsoft Edge** selecionando o ícone da barra de tarefas com o botão direito do mouse e selecione **Nova janela InPrivate**.
-1. Selecione a barra de endereços, navegue até **`https://portal.microsoft.com`** e faça logon no Portal M365 como **Allan Deyoung**alland@WWLxZZZZZZ.onmicrosoft.com (em que ZZZZZZ é sua ID de locatário exclusiva fornecida pelo seu provedor de hospedagem de laboratório). Insira a senha de administrador que deve ser fornecida pelo seu provedor de hospedagem do laboratório.
+1. Selecione a barra de endereços, navegue até **`https://portal.microsoft.com`** e entre no Portal do M365 como **Allan Deyoung**alland@WWLxZZZZZZ.onmicrosoft.com (em que ZZZZZZ é sua ID de locatário exclusiva fornecida pelo provedor de hospedagem de laboratório). Insira a senha de administrador que deve ser fornecida pelo seu provedor de hospedagem do laboratório.
 1. Na caixa de diálogo Permanecer conectado?, selecione a caixa de seleção **Não mostrar novamente** e, em seguida, selecione **Não**.
 1. Como o logon foi bem-sucedido, você pode fechar a janela **InPrivate**.
 1. Volte para a janela do navegador Edge, onde você ainda deve estar conectado ao portal Entra ID **https://entra.microsoft.com**.
