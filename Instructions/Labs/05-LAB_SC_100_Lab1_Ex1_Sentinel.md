@@ -53,7 +53,7 @@ Você criou o workspace do Log Analytics para sua implantação do Sentinel.
 
 ### Tarefa 2 – Criar o Sentinel
 
-Nesta tarefa, você adicionará o Sentinel ao workspace do Log Analytics criado e adicionará logs de demonstração, como o locatário de demonstração não tem dados existentes no workspace do Log Analytics, você importa logs de demonstração para ter uma ideia melhor de como o Sentinel funciona.
+Nesta tarefa, você adicionará o Sentinel ao workspace do Log Analytics criado.
 
 1. Você ainda deve estar conectado ao portal do Azure **https://portal.azure.com**.
 1. Na barra de pesquisa, na faixa azul na parte superior da página, insira **Microsoft Sentinel** e selecione-o nos resultados da pesquisa listados em serviços.
@@ -67,17 +67,14 @@ Você implantou o Sentinel no workspace do Log Analytics.
 ### Tarefa 3 – Configurar o RBAC
 
 Você precisa proteger o acesso com base no privilégio mínimo e criará atribuições de função para os requisitos de função específicos. Em sua próxima implantação produtiva, haverá duas funções diferentes no Centro de Operações de Segurança.
-Além disso, a equipe de rede precisa acessar os registros da Cisco Umbrella. Você deve garantir que a equipe de rede só possa acessar esses logs.
+
 
 #### Requisitos de permissão
 
 | Função | Permissões |
 |---|---|
-| Analista de segurança | Exibir dados, incidentes, pastas de trabalho e outros recursos do Azure Sentinel |
-| | Atribuir/descartar incidentes. |
-| Engenheiro de segurança | Criar e editar pastas de trabalho e regras de análise |
-| | Instalar e atualizar soluções no hub de conteúdo |
-| Equipe de rede | Permissões de leitura para grupo: **NOC** na tabela: **Cisco_Umbrella_dns_CL**|
+| Analista de segurança | Exibir dados, incidentes, pastas de trabalho e outros recursos do Sentinel e Atribuir/descartar incidentes. |
+| Engenheiro de segurança | Criar e editar pastas de trabalho e regras de análise — Instalar e atualizar soluções no hub de conteúdo |
 
 ---
 
@@ -99,40 +96,8 @@ Além disso, a equipe de rede precisa acessar os registros da Cisco Umbrella. Vo
 1. Na folha **Selecionar membros**, pesquise o Grupo **Engenheiros do SOC**.  Nos resultados da pesquisa, selecione **Engenheiros do SOC** e pressione **Selecionar** para adicionar a atribuição de função.
 1. Selecione **Revisar + atribuir** novamente.
 1. Selecione a guia **Atribuições de função** e confirme se as atribuições de função estão definidas.
-1. Agora você adicionará uma função personalizada. No menu suspenso, selecione **Adicionar** e **Adicionar função personalizada**.
-1. Nomeie-a como **`NOC-CiscoUmbrellaCL-Read`**.
-1. Em **Permissão de linha de base**, selecione **Iniciar do zero**.
-1. Selecione **Avançar**.
-1. Na guia **Permissões**, selecione **Adicionar permissões**.
-1. Pesquise **`Microsoft.OperationalInsights`** e selecione o cartão de **Análise de Log do Azure**.
-1. Adicione as seguintes permissões.
-    - Microsoft.OperationalInsights/workspaces
-        - Ler: Obter workspace
-        - Outros : Pesquisar dados do workspace
 
-    - Microsoft.OperationalInsights/workspaces/analytics
-        - Outros : Pesquisar
-
-    - Microsoft.OperationalInsights/workspaces/query
-        - Ler : Consultar dados no workspace
-
-    - Microsoft.OperationalInsights/workspaces/tables/query
-        - Ler : Consultar dados da tabela do workspace
-
-1. Selecione **Examinar + criar**.
-1. Clique em **Criar** e **OK**.
-1. Na barra de pesquisa na parte superior, pesquise **`Resource groups`** e selecione **rg_eastus_soc**.
-1. Abra o workspace do Log Analytics **law-sentinel**.
-1. No painel de navegação esquerdo, expanda **Configurações** e selecione **Tabelas**.
-1. Pesquise por **`Cisco_Umbrella_dns_CL`**.
-1. Clique nas reticências (...), selecione **Controle de acesso (IAM).**
-1. Selecione **Adicionar** > **Adicionar atribuição de função**.
-1. Pesquise **`NOC-CiscoUmbrellaCL-Read`** e selecione a função personalizada.
-1. Selecione **Avançar**.
-1. Selecione **Selecionar membros**, pesquise **NOC**, selecione-o nos resultados da pesquisa e pressione **Selecionar**
-1. Selecione **Revisar + atribuir** novamente.
-
-Você criou o modelo de acesso baseado em função para os requisitos de função da equipe de operações de segurança da Contoso e criou uma função personalizada para a equipe de rede, além de ter atribuído a função na tabela específica em seu workspace do Log Analytics.
+Você criou o modelo de acesso baseado em função para os requisitos de função da equipe de operações de segurança da Contoso.
 
 ### Tarefa 4 — Criar uma pasta de trabalho
 
